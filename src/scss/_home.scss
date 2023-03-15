@@ -1,0 +1,117 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+main {
+    &:after {
+        content: '';
+        min-height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+        z-index: -1;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: space-evenly;
+
+        .information {
+            .soon {
+                max-width: 21.9rem;
+                filter: invert(1);
+                margin-bottom: 80px;
+            }
+
+            .description {
+                width: 49%;
+                font-size: 1.5rem;
+                color: #ffffff;
+                line-height: 1.9rem;
+            }
+        }
+    }
+
+    .carousel-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+
+        .buttons {
+            background-color: #ffffff;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            border-color: #ffffff;
+        }
+
+        .selected {
+            background-color: #1d8346;
+        }
+    }
+
+    .social-media {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .icon {
+            width: 1.87rem;
+            filter: invert(1);
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .carousel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+
+        .image {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            display: none;
+            animation: mudarImagem 0.7s;
+        }
+
+        .active {
+            display: block;
+        }
+    }
+
+    @keyframes mudarImagem {
+        from {
+            opacity: 0.85;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
